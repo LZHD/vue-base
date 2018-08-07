@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="HelloWorld" v-bind:title="HelloWorld" v-if="flag" v-on:click="onClick">
+        {{ HelloWorld }}
+        <li v-for="list in lists">
+            {{ list.text }}
+        </li>
+    </div>
+    <script>
+        var HelloWorld = new Vue({
+            el: '#HelloWorld',
+            data: {
+                HelloWorld: 'Hello World!',
+                flag: true,
+                lists: [
+                    { text: 'text1'},
+                    { text: 'text2'},
+                    { text: 'text3'}
+                ]
+            },
+            methods: {
+                onClick: function () {
+                    console.log(this);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
