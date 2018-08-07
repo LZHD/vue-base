@@ -11,6 +11,8 @@
         <li v-for="list in lists">
             {{ list.text }}
         </li>
+        <p>{{ message }}</p>
+        <input type="text" v-model="message">
     </div>
     <script>
         var HelloWorld = new Vue({
@@ -22,7 +24,8 @@
                     { text: 'text1'},
                     { text: 'text2'},
                     { text: 'text3'}
-                ]
+                ],
+                message: 'dfsdafsa'
             },
             methods: {
                 onClick: function () {
