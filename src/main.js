@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import '../node_modules/ag-grid/dist/styles/ag-grid.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-balham.css'
 
 Vue.config.productionTip = false
 
