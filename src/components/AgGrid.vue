@@ -1,38 +1,52 @@
 <template>
-  <ag-grid-vue style="width: 500px; height: 500px;"
-               class="ag-theme-balham "
+  <ag-grid-vue style="height: 500px;"
+               :class="theme"
                :columnDefs="columnDefs"
                :rowData="rowData"
-  :rowHeight="40">
-  </ag-grid-vue>
+               :rowHeight="40"
+               :gridOptions="gridOptions"/>
 </template>
 
 <script>
 import {AgGridVue} from 'ag-grid-vue'
+import {LocaleText} from './model/LocaleText'
 
 export default {
   name: 'AgGrid',
   data () {
     return {
-      columnDefs: null,
-      rowData: null
+      gridOptions: null
+    }
+  },
+  props: {
+    theme: {
+      type: String,
+      default: 'ag-theme-balham'
+    },
+    columnDefs: {
+      type: Array,
+      default: null
+    },
+    rowData: {
+      type: Array,
+      default: null
     }
   },
   components: {
     AgGridVue
   },
-  beforeMount () {
-    this.columnDefs = [
-      {headerName: 'Make', field: 'make'},
-      {headerName: 'Model', field: 'model'},
-      {headerName: 'Price', field: 'price'}
-    ]
-
-    this.rowData = [
-      {make: 'Toyota', model: 'Celica', price: 35000},
-      {make: 'Ford', model: 'Mondeo', price: 32000},
-      {make: 'Porsche', model: 'Boxter', price: 72000}
-    ]
+  beforeMount: function () {
+    this.gridOptions = {
+      enableColResize: true,
+      enableSorting: true,
+      enableFilter: true,
+      suppressRowClickSelection: false, /* 禁止点击选择行 */
+      rowSelection: 'multiple',
+      localeText: LocaleText,
+      context: {
+        grid: this
+      }
+    }
   }
 }
 </script>
