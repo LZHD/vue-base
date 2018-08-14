@@ -7,7 +7,7 @@
           <Icon type="ios-navigate"></Icon>
           Item 1
         </template>
-        <router-link to="/AgGrid"><MenuItem name="1-1">Option 1</MenuItem></router-link>
+        <MenuItem name="1-1">Option 1</MenuItem>
         <MenuItem name="1-2">Option 2</MenuItem>
         <MenuItem name="1-3">Option 3</MenuItem>
       </Submenu>

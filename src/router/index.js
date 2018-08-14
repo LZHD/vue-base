@@ -9,10 +9,24 @@ export default new Router({
     {
       path: '',
       component: layout,
-      redirect: 'examples',
+      redirect: 'dashboard',
       children: [{
-        path: 'examples',
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/dashboard'),
+        name: 'dashboard',
+        meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+      }]
+    },
+    {
+      path: '/examples',
+      component: layout,
+      redirect: '/examples/button',
+      children: [{
+        path: 'button',
         component: () => import('@/views/examples/button')
+      }, {
+        path: 'agGrid',
+        component: () => import('@/views/examples/agGrid')
       }]
     }
   ]

@@ -5,7 +5,7 @@
 <script>
 import AgGrid from '../../components/AgGrid/AgGrid'
 export default {
-  name: 'ag-grid',
+  name: 'dashboard',
   components: {
     AgGrid
   },

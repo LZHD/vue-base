@@ -1,5 +1,5 @@
 <template>
-  <ag-grid-vue style="height: 500px;"
+  <ag-grid-vue style="height: 500px; width: 500px;"
                :class="theme"
                :columnDefs="columnDefs"
                :rowData="rowData"
