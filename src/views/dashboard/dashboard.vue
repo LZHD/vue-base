@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AgGrid from '../../components/AgGrid/AgGrid'
+import AgGrid from '@/components/AgGrid/AgGrid'
 export default {
   name: 'dashboard',
   components: {

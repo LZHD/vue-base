@@ -2,6 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import '../node_modules/ag-grid/dist/styles/ag-grid.css'
 import '../node_modules/ag-grid/dist/styles/ag-theme-balham.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-balham-dark.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-blue.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-bootstrap.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-dark.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-fresh.css'
+import '../node_modules/ag-grid/dist/styles/ag-theme-material.css'
 import 'iview/dist/styles/iview.css'
 
 import '@/assets/css/index.scss'
