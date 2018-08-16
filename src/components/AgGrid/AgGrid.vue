@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <ag-grid-vue style="height: 500px;"
-                 :class="theme"
-                 :columnDefs="columnDefs"
-                 :rowData="rowData"
-                 :rowHeight="40"
-                 :gridOptions="gridOptions"
-                 :toolPanelSuppressSideButtons="true"/>
-    <grid-bbar></grid-bbar>
+  <div class="content">
+    <ag-grid-vue
+      style="height: 500px;"
+      :class="theme"
+      :columnDefs="columnDefs"
+      :rowData="rowData"
+      :rowHeight="40"
+      :gridOptions="gridOptions"
+      :toolPanelSuppressSideButtons="true"
+    />
+    <grid-bbar/>
   </div>
 </template>
 
 <script>
 import {AgGridVue} from 'ag-grid-vue'
 import {LocaleText} from './model/LocaleText'
-import {GridBbar} from './components/GridBbar'
+import GridBbar from './components/GridBbar'
 
 export default {
   name: 'AgGrid',
