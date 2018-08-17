@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <Card>
     <ag-grid-vue
       style="height: 500px;"
       :class="theme"
@@ -10,7 +10,7 @@
       :toolPanelSuppressSideButtons="true"
     />
     <grid-bbar/>
-  </div>
+  </Card>
 </template>
 
 <script>

@@ -21,10 +21,12 @@ export default new Router({
       name: 'examples',
       children: [{
         path: 'button',
-        component: () => import('@/views/examples/button')
+        name: 'button',
+        component: () => import('@/views/examples/button.vue')
       }, {
-        path: 'agGrid',
-        component: () => import('@/views/examples/agGrid')
+        path: 'ag_grid',
+        name: 'ag_grid',
+        component: () => import('@/views/examples/agGrid.vue')
       }]
     }
   ]
