@@ -7,20 +7,18 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '',
+      path: '/',
       component: layout,
       redirect: 'dashboard',
       children: [{
         path: 'dashboard',
-        component: () => import('@/views/dashboard/dashboard'),
-        name: 'dashboard',
-        meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+        component: () => import('@/views/dashboard/dashboard')
       }]
     },
     {
       path: '/examples',
       component: layout,
-      redirect: '/examples/button',
+      name: 'examples',
       children: [{
         path: 'button',
         component: () => import('@/views/examples/button')
