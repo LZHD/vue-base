@@ -1,8 +1,8 @@
 <template>
   <div>
-      <Select v-model="theme" placeholder="主题" placement="top" @change="add()" style="width: 100px;">
-        <Option v-for="item in themes" :value="item.value" :key="item.value">{{ item.label }}</Option>
-      </Select>
+      <!--<Select v-model="theme" placeholder="主题" placement="top" @change="add()" style="width: 100px;">-->
+        <!--<Option v-for="item in themes" :value="item.value" :key="item.value">{{ item.label }}</Option>-->
+      <!--</Select>-->
     <Page :total="40" show-elevator show-sizer show-total placement="top"></Page>
   </div>
 </template>
