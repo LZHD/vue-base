@@ -1,10 +1,14 @@
 <template>
-  <div>
-      <!--<Select v-model="theme" placeholder="主题" placement="top" @change="add()" style="width: 100px;">-->
-        <!--<Option v-for="item in themes" :value="item.value" :key="item.value">{{ item.label }}</Option>-->
-      <!--</Select>-->
-    <Page :total="40" show-elevator show-sizer show-total placement="top"></Page>
-  </div>
+  <Row>
+    <Col span="5">
+      <Select v-model="theme" placeholder="主题" placement="top" @on-change="changeTheme" style="width: 100px;">
+        <Option v-for="item in themes" :value="item.value" :key="item.value">{{ item.label }}</Option>
+      </Select>
+    </Col>
+    <Col span="19" class="">
+      <Page :total="40" show-elevator show-sizer show-total placement="top"></Page>
+    </Col>
+  </Row>
 </template>
 
 <script>
@@ -16,39 +20,31 @@ export default {
       themes: [
         {
           value: 'ag-theme-balham',
-          label: '111'
+          label: '默认'
         },
         {
           value: 'ag-theme-balham-dark',
-          label: '222'
+          label: '简约黑'
         },
         {
           value: 'ag-theme-blue',
-          label: '333'
-        },
-        {
-          value: 'ag-theme-bootstrap',
-          label: '444'
+          label: '天空蓝'
         },
         {
           value: 'ag-theme-dark',
-          label: '555'
+          label: '酷炫黑'
         },
         {
           value: 'ag-theme-fresh',
-          label: '666'
-        },
-        {
-          value: 'ag-theme-material',
-          label: '777'
+          label: '鲜明'
         }
       ],
       theme: 'ag-theme-balham'
     }
   },
-  method: {
-    add () {
-      console.log(this.theme)
+  methods: {
+    changeTheme (value) {
+      this.$emit('on-changeTheme', value)
     }
   }
 }

@@ -9,7 +9,7 @@
       :gridOptions="gridOptions"
       :toolPanelSuppressSideButtons="true"
     />
-    <grid-bbar/>
+    <grid-bbar @on-changeTheme="changeTheme"/>
   </Card>
 </template>
 
@@ -26,14 +26,11 @@ export default {
   },
   data () {
     return {
-      gridOptions: null
+      gridOptions: null,
+      theme: 'ag-theme-balham'
     }
   },
   props: {
-    theme: {
-      type: String,
-      default: 'ag-theme-balham'
-    },
     columnDefs: {
       type: Array,
       default: null
@@ -54,6 +51,11 @@ export default {
       context: {
         grid: this
       }
+    }
+  },
+  methods: {
+    changeTheme (theme) {
+      this.theme = theme
     }
   }
 }
