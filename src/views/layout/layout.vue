@@ -2,6 +2,7 @@
   <div id="app-layout">
     <sidebar></sidebar>
     <div class="main-content">
+      <header></header>
       <app-main></app-main>
     </div>
   </div>
@@ -9,12 +10,14 @@
 
 <script>
 import Sidebar from './components/sidebar/sidebar'
+import Header from './components/header/header'
 import appMain from './components/appMain'
 
 export default {
   name: 'layout',
   components: {
     Sidebar,
+    Header,
     appMain
   }
 }
