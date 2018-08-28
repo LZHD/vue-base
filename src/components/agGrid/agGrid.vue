@@ -1,7 +1,7 @@
 <template>
   <Card>
     <ag-grid-vue
-      style="height: 500px;"
+      :style="styles"
       :class="theme"
       :columnDefs="columnDefs"
       :rowData="rowData"
@@ -9,7 +9,7 @@
       :gridOptions="gridOptions"
       :toolPanelSuppressSideButtons="true"
     />
-    <grid-bbar @on-changeTheme="changeTheme"/>
+    <grid-bbar @on-changeTheme="changeTheme" :style="{marginTop: '10px'}"/>
   </Card>
 </template>
 
@@ -38,6 +38,15 @@ export default {
     rowData: {
       type: Array,
       default: null
+    },
+    styles: {
+      type: Object,
+      // 对象或数组默认值必须从一个工厂函数获取
+      default () {
+        return {
+          height: '500px'
+        }
+      }
     }
   },
   beforeMount: function () {
