@@ -20,9 +20,9 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
   .headImg {
     width: 100%;
-    height: 80px;
+    height: 64px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 8px;
     img {
       width: 60px;
      }

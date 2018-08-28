@@ -4,7 +4,6 @@ import 'ag-grid/dist/styles/ag-grid.css'
 import 'ag-grid/dist/styles/ag-theme-balham.css'
 import 'ag-grid/dist/styles/ag-theme-balham-dark.css'
 import 'ag-grid/dist/styles/ag-theme-blue.css'
-import 'ag-grid/dist/styles/ag-theme-dark.css'
 import 'ag-grid/dist/styles/ag-theme-fresh.css'
 import 'iview/dist/styles/iview.css'
 
