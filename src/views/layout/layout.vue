@@ -1,6 +1,6 @@
 <template>
   <div id="app-layout">
-    <sidebar></sidebar>
+    <side-bar></side-bar>
     <div class="main-content">
       <header-bar></header-bar>
       <app-main></app-main>
@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import Sidebar from './components/sidebar/sidebar'
-import HeaderBar from './components/header-bar/header-bar'
+import sideBar from './components/sideBar/sideBar'
+import HeaderBar from './components/headerBar/headerBar'
 import appMain from './components/appMain'
 
 export default {
   name: 'layout',
   components: {
-    Sidebar,
+    sideBar,
     HeaderBar,
     appMain
   }

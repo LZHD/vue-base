@@ -16,10 +16,10 @@
 <script>
 import {AgGridVue} from 'ag-grid-vue'
 import {LocaleText} from './model/LocaleText'
-import GridBbar from './components/GridBbar'
+import GridBbar from './components/gridBbar'
 
 export default {
-  name: 'AgGrid',
+  name: 'agGrid',
   components: {
     GridBbar,
     AgGridVue

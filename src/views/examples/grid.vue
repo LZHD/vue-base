@@ -1,13 +1,13 @@
 <template>
-  <ag-grid :row-data="rowData" :column-defs="columnDefs"></ag-grid>
+  <ag-grid :row-data="rowData" :column-defs="columnDefs"/>
 </template>
 
 <script>
-import AgGrid from '@/components/AgGrid/AgGrid'
+import agGrid from '@/components/agGrid/agGrid'
 export default {
-  name: 'ag_grid',
+  name: 'grid',
   components: {
-    AgGrid
+    agGrid
   },
   data: function () {
     return {

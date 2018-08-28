@@ -14,7 +14,7 @@
 <script>
 
 export default {
-  name: 'GridBbar',
+  name: 'gridBbar',
   data () {
     return {
       themes: [

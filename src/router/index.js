@@ -24,9 +24,9 @@ export default new Router({
         name: 'button',
         component: () => import('@/views/examples/button.vue')
       }, {
-        path: 'ag_grid',
-        name: 'ag_grid',
-        component: () => import('@/views/examples/agGrid.vue')
+        path: 'grid',
+        name: 'grid',
+        component: () => import('@/views/examples/grid.vue')
       }]
     }
   ]
