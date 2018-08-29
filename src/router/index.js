@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import layout from '@/views/layout/layout'
+import iView from 'iview'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -31,3 +32,16 @@ export default new Router({
     }
   ]
 })
+
+// 页面加载进度条开始
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start()
+  next()
+})
+
+// 页面加载进度条结束
+router.afterEach((to) => {
+  iView.LoadingBar.finish()
+})
+
+export default router

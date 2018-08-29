@@ -1,6 +1,6 @@
 <template>
   <a @click="change" type="text" :class="['side-trigger', collapsed ? 'collapsed' : '']">
-    <Icon :type="type" :size="size"/>
+    <Icon :type="type" :size="size"></Icon>
   </a>
 </template>
 

@@ -1,9 +1,176 @@
 <template>
-  <router-link to="/">
-    <div :class="[collapsed ? 'headImgx' : 'headImg']" >
-      <img src="../../../../assets/logo.png" alt="">
+  <div class="side-item-content">
+    <router-link to="/">
+      <div :class="[collapsed ? 'headImgx' : 'headImg']" >
+        <img src="../../../../assets/logo.png" alt="">
+      </div>
+    </router-link>
+    <div class="side-item">
+      <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
+        <Submenu name="1">
+          <template slot="title">
+            <Icon type="ios-navigate"></Icon>
+            Item 1
+          </template>
+          <MenuItem name="1-1">Option 1</MenuItem>
+          <MenuItem name="1-2">Option 2</MenuItem>
+          <MenuItem name="1-3">Option 3</MenuItem>
+        </Submenu>
+        <Submenu name="2">
+          <template slot="title">
+            <Icon type="ios-keypad"></Icon>
+            Item 2
+          </template>
+          <MenuItem name="2-1">Option 1</MenuItem>
+          <MenuItem name="2-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="3">
+          <template slot="title">
+            <Icon type="ios-analytics"></Icon>
+            Item 3
+          </template>
+          <MenuItem name="3-1">Option 1</MenuItem>
+          <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+      </Menu>
     </div>
-  </router-link>
+  </div>
 </template>
 
 <script>
@@ -18,23 +185,36 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  .headImg {
+  .side-item-content {
     width: 100%;
-    height: 64px;
-    text-align: center;
-    padding-top: 8px;
-    img {
-      width: 60px;
-     }
-  }
+    height: 100%;
+    .headImg {
+      width: 100%;
+      height: 64px;
+      text-align: center;
+      padding-top: 8px;
+      img {
+        width: 60px;
+      }
+    }
 
-  .headImgx {
-    width: 100%;
-    height: 40px;
-    text-align: center;
-    padding-top: 10px;
-    img {
-      width: 30px;
+    .headImgx {
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      padding-top: 10px;
+      img {
+        width: 30px;
+      }
+    }
+
+    .side-item {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow-y: auto;
+      height: calc(100% - 64px);
     }
   }
 </style>
