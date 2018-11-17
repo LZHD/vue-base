@@ -28,6 +28,10 @@ const router = new Router({
         path: 'grid',
         name: 'grid',
         component: () => import('@/views/examples/grid.vue')
+      }, {
+        path: 'tinymce',
+        name: 'tinymce',
+        component: () => import('@/views/examples/tinymce.vue')
       }]
     }
   ]
