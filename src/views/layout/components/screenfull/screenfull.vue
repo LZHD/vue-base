@@ -9,7 +9,7 @@
 <script>
 import screenfull from 'screenfull'
 export default {
-  name: "screenfull",
+  name: 'screenfull',
   data () {
     return {
       status: {
@@ -25,12 +25,13 @@ export default {
         return false
       }
       screenfull.toggle()
+      this.status = !this.status
     }
   },
   mounted () {
-    window.addEventListener('resize', () => {
-      this.status = screenfull.isFullscreen
-    })
+    // window.addEventListener('resize', () => {
+    //   this.status = screenfull.isFullscreen
+    // })
   }
 }
 </script>
