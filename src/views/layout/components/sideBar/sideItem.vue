@@ -17,15 +17,15 @@
 </template>
 
 <script>
-  export default {
-    name: "side-item",
-    props: {
-      parentItem: {
-        type: Object,
-        default: () => {}
-      }
+export default {
+  name: 'side-item',
+  props: {
+    parentItem: {
+      type: Object,
+      default: () => {}
     }
   }
+}
 </script>
 
 <style scoped>

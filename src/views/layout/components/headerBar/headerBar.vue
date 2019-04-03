@@ -6,25 +6,25 @@
 </template>
 
 <script>
-  import screenfull from '../screenfull/screenfull'
-  import sideTigger from '../sideTigger/sideTigger'
-  export default {
-    name: "headerBar",
-    components: {
-      screenfull,
-      sideTigger
-    },
-    props: {
-      collapsed: {
-        type: Boolean
-      }
-    },
-    methods: {
-      sideTigger (status) {
-        this.$emit('on-tigger', status)
-      }
+import screenfull from '../screenfull/screenfull'
+import sideTigger from '../sideTigger/sideTigger'
+export default {
+  name: 'headerBar',
+  components: {
+    screenfull,
+    sideTigger
+  },
+  props: {
+    collapsed: {
+      type: Boolean
+    }
+  },
+  methods: {
+    sideTigger (status) {
+      this.$emit('on-tigger', status)
     }
   }
+}
 </script>
 
 <style scoped>

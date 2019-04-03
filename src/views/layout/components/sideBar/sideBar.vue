@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import sideItem from './sideItem'
+import sideItem from './sideItem'
 export default {
   name: 'sideBar',
   components: {

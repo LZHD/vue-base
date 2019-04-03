@@ -5,21 +5,21 @@
 </template>
 
 <script>
-  export default {
-    name: "back-top",
-    props: {
-      places: {
-        type: Object,
-        default () {
-          return {
-            height: '200',
-            right: '150',
-            bottom: '100'
-          }
+export default {
+  name: 'back-top',
+  props: {
+    places: {
+      type: Object,
+      default () {
+        return {
+          height: '200',
+          right: '150',
+          bottom: '100'
         }
       }
     }
   }
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>

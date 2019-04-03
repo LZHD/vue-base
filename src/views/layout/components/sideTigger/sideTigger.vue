@@ -5,25 +5,25 @@
 </template>
 
 <script>
-  export default {
-    name: "side-tigger",
-    data () {
-      return {
-        type: 'md-menu',
-        size: 26
-      }
-    },
-    props: {
-      collapsed: {
-        type: Boolean
-      }
-    },
-    methods: {
-      change () {
-        this.$emit('on-change', !this.collapsed)
-      }
+export default {
+  name: 'side-tigger',
+  data () {
+    return {
+      type: 'md-menu',
+      size: 26
+    }
+  },
+  props: {
+    collapsed: {
+      type: Boolean
+    }
+  },
+  methods: {
+    change () {
+      this.$emit('on-change', !this.collapsed)
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
