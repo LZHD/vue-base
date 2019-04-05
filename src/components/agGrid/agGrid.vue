@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import {AgGridVue} from 'ag-grid-vue'
-import {LocaleText} from './model/LocaleText'
+import { AgGridVue } from 'ag-grid-vue'
+import { LocaleText } from './model/LocaleText'
 import GridBbar from './components/gridBbar'
 
 export default {
