@@ -1,51 +1,29 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import layout from '@/views/layout/layout'
-import iView from 'iview'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-const router = new Router({
-  routes: [
-    {
-      path: '/',
-      component: layout,
-      redirect: 'dashboard',
-      children: [{
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/dashboard')
-      }]
-    },
-    {
-      path: '/examples',
-      component: layout,
-      name: 'examples',
-      children: [{
-        path: 'button',
-        name: 'button',
-        component: () => import('@/views/examples/button.vue')
-      }, {
-        path: 'grid',
-        name: 'grid',
-        component: () => import('@/views/examples/grid.vue')
-      }, {
-        path: 'tinymce',
-        name: 'tinymce',
-        component: () => import('@/views/examples/tinymce.vue')
-      }]
-    }
-  ]
-})
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+]
 
-// 页面加载进度条开始
-router.beforeEach((to, from, next) => {
-  iView.LoadingBar.start()
-  next()
-})
-
-// 页面加载进度条结束
-router.afterEach((to) => {
-  iView.LoadingBar.finish()
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
 
 export default router
