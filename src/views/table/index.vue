@@ -56,7 +56,8 @@
 </template>
 
 <script>
-import { getList } from '@/common/config/api/table';
+import request from '@/common/utils/request';
+import API from '@/common/config/api';
 
 export default {
   filters: {
@@ -81,7 +82,7 @@ export default {
   methods: {
     fetchData() {
       this.listLoading = true;
-      getList().then(response => {
+      request.get(API.list).then(response => {
         this.list = response.data.items;
         this.listLoading = false;
       });
