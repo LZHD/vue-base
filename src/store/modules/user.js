@@ -1,4 +1,5 @@
-import { login, logout, getInfo } from '@/common/config/api/user';
+import request from '@/common/utils/request';
+import API from '@/common/config/api';
 import { getToken, setToken, removeToken } from '@/common/utils/auth';
 import { resetRouter } from '@/router';
 
@@ -32,7 +33,8 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo;
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password })
+      request
+        .post(API.login, { username: username.trim(), password: password })
         .then(response => {
           const { data } = response;
           commit('SET_TOKEN', data.token);
@@ -48,7 +50,12 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token)
+      request
+        .get(API.info, {
+          params: {
+            token: state.token
+          }
+        })
         .then(response => {
           const { data } = response;
 
@@ -69,9 +76,10 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state }) {
+  logout({ commit }) {
     return new Promise((resolve, reject) => {
-      logout(state.token)
+      request
+        .post(API.logout)
         .then(() => {
           removeToken(); // must remove  token  first
           resetRouter();
