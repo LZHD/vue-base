@@ -7,15 +7,15 @@
     "build:prod": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
-    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
+    "svgo": "svgo -f src/common/assets/icons/svg --config=src/common/assets/icons/svgo.yml",
     "lint": "eslint --ext .js,.vue src",
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
     "test:ci": "npm run lint && npm run test:unit"
   },
   "dependencies": {
-    "@form-create/element-ui": "^2.5.3",
+    "@form-create/element-ui": "^2.5.4",
     "axios": "^0.21.1",
-    "core-js": "^3.6.5",
+    "core-js": "~3.6.5",
     "element-ui": "^2.15.1",
     "js-cookie": "^2.2.1",
     "normalize.css": "^8.0.1",

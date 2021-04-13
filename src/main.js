@@ -12,8 +12,8 @@ import App from './App';
 import store from './store';
 import router from './router';
 
-import '@/icons'; // icon
-import '@/permission'; // permission control
+import '@/common/assets/icons'; // icon
+import '@/common/permission'; // permission control
 
 /**
  * If you don't want to use mock-server
@@ -36,8 +36,7 @@ Vue.use(ElementUI, { locale });
 Vue.config.productionTip = false;
 
 new Vue({
-  el: '#app',
   router,
   store,
   render: h => h(App)
-});
+}).$mount("#app");
