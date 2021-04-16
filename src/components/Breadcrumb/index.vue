@@ -64,6 +64,10 @@ export default {
       return toPath(params);
     },
     handleLink(item) {
+      // https://github.com/vuejs/vue-router/issues/974
+      // https://github.com/vuejs/vue-router/issues/2881
+      // https://github.com/vuejs/vue-router/issues/2881#issuecomment-520554378
+      // https://github.com/vuejs/vue-router/issues/2963
       const { redirect, path } = item;
       if (redirect) {
         this.$router.push(redirect).catch(() => {});
