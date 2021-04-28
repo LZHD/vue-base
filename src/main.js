@@ -13,6 +13,8 @@ import router from './router';
 import '@/common/assets/icons'; // icon
 import '@/common/permission'; // permission control
 
+import * as filters from '@/common/filters'; // global filters
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -25,6 +27,11 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock');
   mockXHR();
 }
+
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key]);
+});
 
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale });
