@@ -1,50 +1,3 @@
-<template>
-  <div v-if="!item.hidden">
-    <template
-      v-if="
-        hasOneShowingChild(item.children, item) &&
-        (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
-        !item.alwaysShow
-      "
-    >
-      <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-        <el-menu-item
-          :index="resolvePath(onlyOneChild.path)"
-          :class="{ 'submenu-title-noDropdown': !isNest }"
-        >
-          <item
-            :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"
-            :title="onlyOneChild.meta.title"
-          />
-        </el-menu-item>
-      </app-link>
-    </template>
-
-    <el-submenu
-      v-else
-      ref="subMenu"
-      :index="resolvePath(item.path)"
-      popper-append-to-body
-    >
-      <template slot="title">
-        <item
-          v-if="item.meta"
-          :icon="item.meta && item.meta.icon"
-          :title="item.meta.title"
-        />
-      </template>
-      <sidebar-item
-        v-for="child in item.children"
-        :key="child.path"
-        :is-nest="true"
-        :item="child"
-        :base-path="resolvePath(child.path)"
-        class="nest-menu"
-      />
-    </el-submenu>
-  </div>
-</template>
-
 <script>
 import path from 'path';
 import { isExternal } from '@/common/utils/validate';
@@ -71,37 +24,7 @@ export default {
       default: ''
     }
   },
-  data() {
-    // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
-    // TODO: refactor with render function
-    this.onlyOneChild = null;
-    return {};
-  },
   methods: {
-    hasOneShowingChild(children = [], parent) {
-      const showingChildren = children.filter(item => {
-        if (item.hidden) {
-          return false;
-        } else {
-          // Temp set(will be used if only has one showing child)
-          this.onlyOneChild = item;
-          return true;
-        }
-      });
-
-      // When there is only one child router, the child router is displayed by default
-      if (showingChildren.length === 1) {
-        return true;
-      }
-
-      // Show parent if there are no child router to display
-      if (showingChildren.length === 0) {
-        this.onlyOneChild = { ...parent, path: '', noShowingChildren: true };
-        return true;
-      }
-
-      return false;
-    },
     resolvePath(routePath) {
       if (isExternal(routePath)) {
         return routePath;
@@ -110,6 +33,67 @@ export default {
         return this.basePath;
       }
       return path.resolve(this.basePath, routePath);
+    }
+  },
+  render(createElement, context) {
+    console.log(context);
+    const { item, isNest } = this;
+    if (item.hidden) {
+      return null;
+    }
+    let hasOneShowingChild = false;
+    let onlyOneChild = {};
+    const showingChildren = item.children.filter(child => !child.hidden);
+
+    // When there is only one child router, the child router is displayed by default
+    hasOneShowingChild = showingChildren.length === 1;
+
+    // Show parent if there are no child router to display
+    if (showingChildren.length === 0) {
+      onlyOneChild = { ...item, path: '', noShowingChildren: true };
+      hasOneShowingChild = true;
+    }
+    if (
+      hasOneShowingChild &&
+      (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
+      !item.alwaysShow
+    ) {
+      return onlyOneChild.meta ? (
+        <app-link to={this.resolvePath(onlyOneChild.path)}>
+          <el-menu-item
+            index={this.resolvePath(onlyOneChild.path)}
+            className={{ 'submenu-title-noDropdown': !isNest }}>
+            <item
+              icon={onlyOneChild.meta.icon || (item.meta && item.meta.icon)}
+              title={onlyOneChild.meta.title}
+            />
+          </el-menu-item>
+        </app-link>
+      ) : null;
+    } else {
+      return (
+        <el-submenu
+          index={this.resolvePath(item.path)}
+          popper-append-to-body={true}>
+          {item.meta && (
+            <template slot="title">
+              <item
+                icon={item.meta && item.meta.icon}
+                title={item.meta.title}
+              />
+            </template>
+          )}
+          {item.children.map(child => (
+            <sidebar-item
+              key={child.path}
+              is-nest={true}
+              item={child}
+              base-path={this.resolvePath(child.path)}
+              className="nest-menu"
+            />
+          ))}
+        </el-submenu>
+      );
     }
   }
 };
